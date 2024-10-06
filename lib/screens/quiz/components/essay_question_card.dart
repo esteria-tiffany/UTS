@@ -29,7 +29,9 @@ class EssayQuestionCard extends StatelessWidget {
         children: [
           Text(
             question.question,
-            style: Theme.of(context).textTheme.headlineMedium,
+            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+            color: Colors.black,
+            ),
           ),
           SizedBox(height: 20),
           TextField(

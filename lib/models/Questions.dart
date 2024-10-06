@@ -60,10 +60,10 @@ const List<Map<String, dynamic>> sample_data = [
   },
   {
     "id": 5,
-    "question": "buat true or false",
-    "options": [], // Kosongkan untuk soal essay
-    "answer_index": null, // Tidak ada jawaban index untuk essay
-    "type": "essay", // Jenis soal essay
+    "question": "Apakah benar negara Thailand tidak pernah dijajah?",
+    "options": ['Benar', 'Salah'],
+    "answer_index": 0,
+    "type": "multiple_choice", // Jenis soal
   },
   {
     "id": 6,
@@ -74,23 +74,23 @@ const List<Map<String, dynamic>> sample_data = [
   },
   {
     "id": 7,
-    "question": "Berapa banyak medali emas yang diraih indonesia?",
+    "question": "Berapa banyak medali emas yang diraih indonesia selama olimpiade?",
     "options": ['5', '4', '10', '8'],
     "answer_index": 2,
     "type": "multiple_choice", // Jenis soal
   },
   {
     "id": 8,
-    "question": "waiting for question",
-    "options": ['5', '4', '10', '8'],
-    "answer_index": 3,
+    "question": "Apakah benar Indonesia memiliki lebih dari 17.000 pulau?",
+    "options": ['Benar', 'Salah'],
+    "answer_index": 0,
     "type": "multiple_choice", // Jenis soal
   },
   {
     "id": 9,
-    "question": "buat true or false",
-    "options": ['Tiga', 'Empat', 'Enam', 'Lima'],
-    "answer_index": 2,
+    "question": "Apakah benar negara ASEAN terdiri dari 8 negara?",
+    "options": ['Benar', 'Salah'],
+    "answer_index": 1,
     "type": "multiple_choice", // Jenis soal
   },
   {
@@ -102,7 +102,7 @@ const List<Map<String, dynamic>> sample_data = [
   },
 ];
 
-List<Question> _questions = sample_data.map<Question>((question) {
+List<Question> _question = sample_data.map<Question>((question) {
   if (question['type'] == 'essay') {
     return EssayQuestion(
      id: question['id'],

@@ -47,7 +47,6 @@ class QuestionController extends GetxController
   int? _selectedAns = 0;
   int? get selectedAns => this._selectedAns;
 
-  // for more about obs please check documentation
   RxInt _questionNumber = 1.obs;
   RxInt get questionNumber => this._questionNumber;
 
@@ -114,7 +113,7 @@ class QuestionController extends GetxController
       // Once timer is finish go to the next qn
       _animationController.forward().whenComplete(nextQuestion);
     } else {
-      // Get package provide us simple way to naviigate another page
+      // Get package provide us simple way to navigate another page
       Get.to(ScoreScreen());
     }
   }
