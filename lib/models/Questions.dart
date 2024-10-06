@@ -32,35 +32,70 @@ const List<Map<String, dynamic>> sample_data = [
   {
     "id": 1,
     "question":
-    "Flutter is an open-source UI software development kit created by ______",
-    "options": ['Apple', 'Google', 'Facebook', 'Microsoft'],
+    "Indonesia merdeka tahun berapa ?",
+    "options": ['1942', '1945', '1943', '1944'],
     "answer_index": 1,
     "type": "multiple_choice", // Jenis soal
   },
   {
     "id": 2,
-    "question": "When google release Flutter.",
-    "options": ['Jun 2017', 'Jun 2017', 'May 2017', 'May 2018'],
+    "question": "Siapakah presiden indonesia ke 4?",
+    "options": ['Soekarno', 'Habibie', 'Gusdur', 'Soeharto'],
     "answer_index": 2,
     "type": "multiple_choice", // Jenis soal
   },
   {
     "id": 3,
-    "question": "A memory location that holds a single letter or number.",
-    "options": ['Double', 'Int', 'Char', 'Word'],
-    "answer_index": 2,
+    "question": "Indonesia di jajah oleh jepang selama ...",
+    "options": ['1 Tahun', '2 Tahun', '3 Tahun', '3,5 Tahun'],
+    "answer_index": 3,
     "type": "multiple_choice", // Jenis soal
   },
   {
     "id": 4,
-    "question": "What command do you use to output data to the screen?",
-    "options": ['Cin', 'Count>>', 'Cout', 'Output>>'],
+    "question": "Ada berapa negara yang sudah pernah menjajah indonesia?",
+    "options": ['Tiga', 'Empat', 'Enam', 'Lima'],
     "answer_index": 2,
     "type": "multiple_choice", // Jenis soal
   },
   {
     "id": 5,
-    "question": "Explain the concept of state management in Flutter.",
+    "question": "buat true or false",
+    "options": [], // Kosongkan untuk soal essay
+    "answer_index": null, // Tidak ada jawaban index untuk essay
+    "type": "essay", // Jenis soal essay
+  },
+  {
+    "id": 6,
+    "question": "Negara terbesar di dunia adalah",
+    "options": ['China', 'Amerika', 'Jepang', 'Rusia'],
+    "answer_index": 3,
+    "type": "multiple_choice", // Jenis soal
+  },
+  {
+    "id": 7,
+    "question": "Berapa banyak medali emas yang diraih indonesia?",
+    "options": ['5', '4', '10', '8'],
+    "answer_index": 2,
+    "type": "multiple_choice", // Jenis soal
+  },
+  {
+    "id": 8,
+    "question": "waiting for question",
+    "options": ['5', '4', '10', '8'],
+    "answer_index": 3,
+    "type": "multiple_choice", // Jenis soal
+  },
+  {
+    "id": 9,
+    "question": "buat true or false",
+    "options": ['Tiga', 'Empat', 'Enam', 'Lima'],
+    "answer_index": 2,
+    "type": "multiple_choice", // Jenis soal
+  },
+  {
+    "id": 10,
+    "question": "Jelaskan arti dari Bhineka Tunggal Ika.",
     "options": [], // Kosongkan untuk soal essay
     "answer_index": null, // Tidak ada jawaban index untuk essay
     "type": "essay", // Jenis soal essay
@@ -68,18 +103,18 @@ const List<Map<String, dynamic>> sample_data = [
 ];
 
 List<Question> _questions = sample_data.map<Question>((question) {
-if (question['type'] == 'essay') {
-return EssayQuestion(
-id: question['id'],
-question: question['question'],
-);
-} else {
-return Question(
-id: question['id'],
-question: question['question'],
-options: List<String>.from(question['options']),
-answer: question['answer_index'],
-type: question['type'],
-);
-}
+  if (question['type'] == 'essay') {
+    return EssayQuestion(
+     id: question['id'],
+      question: question['question'],
+    );
+  } else {
+    return Question(
+      id: question['id'],
+      question: question['question'],
+      options: List<String>.from(question['options']),
+      answer: question['answer_index'],
+      type: question['type'],
+    );
+  }
 }) .toList();
